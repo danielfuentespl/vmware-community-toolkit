@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0-rc5",
+  "status": "clean-community-MIT-candidate-local-review",
+  "license_status": "MIT",
+  "publication_authorized": false,
+  "real_vmware_validated": false,
+  "distribution_authorized": true,
+  "license_scope": "Original public source files in docs/distribution-rights.json; dependencies and excluded material are outside the grant.",
+  "copyright_notice": "Copyright (c) 2026 Daniel Fuentes"
+}

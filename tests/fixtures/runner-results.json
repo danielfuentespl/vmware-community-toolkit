@@ -1,0 +1,185 @@
+{
+  "VMInventory": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMId": "VirtualMachine-fixture01",
+      "VM": "lab-vm01",
+      "NumCpu": 2,
+      "MemoryGB": 4,
+      "PowerState": "PoweredOn",
+      "VMHost": "esxi01.example.invalid"
+    }
+  ],
+  "Tools": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMId": "fixture01",
+      "VM": "lab-vm01",
+      "PowerState": "poweredOn",
+      "ToolsVersion": "12345",
+      "ToolsVersionStatus": "guestToolsCurrent",
+      "ToolsRunningStatus": "guestToolsRunning"
+    }
+  ],
+  "Snapshots": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMId": "VirtualMachine-fixture01",
+      "VM": "lab-vm01",
+      "SnapshotId": "Snapshot-fixture01",
+      "Snapshot": "lab-old",
+      "Created": "2026-10-01T00:00:00Z",
+      "SizeGB": 2
+    }
+  ],
+  "Datastores": [
+    {
+      "VIServer": "vc.example.invalid",
+      "DatastoreId": "Datastore-fixture01",
+      "Datastore": "lab-store",
+      "Accessible": true,
+      "CapacityGiB": 100,
+      "FreeGiB": 25,
+      "UsedGiB": 75,
+      "UsedPercent": 75
+    }
+  ],
+  "HostHealth": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHostId": "fixture01",
+      "VMHost": "esxi01.example.invalid",
+      "AlarmStatus": "green",
+      "ConnectionState": "connected",
+      "InMaintenanceMode": false,
+      "HardwareHealth": "NotEvaluated"
+    }
+  ],
+  "Dns": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "DnsAddress": [
+        "192.0.2.53"
+      ],
+      "DomainName": "example.invalid",
+      "SearchDomain": [
+        "example.invalid"
+      ]
+    }
+  ],
+  "Certificates": [
+    {
+      "VIServer": "vc.example.invalid",
+      "Entity": "esxi01.example.invalid",
+      "Scope": "VMHost",
+      "CertificateUid": "fixture-ssl",
+      "NotBeforeUtc": "2026-01-01T00:00:00Z",
+      "NotAfterUtc": "2026-10-20T00:00:00Z",
+      "TrustVerified": false
+    }
+  ],
+  "HostSecurity": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "LockdownMode": "lockdownNormal",
+      "ServiceKey": "fixture-service",
+      "ServiceRunning": false,
+      "ServicePolicy": "off",
+      "Assessment": "NotEvaluated"
+    }
+  ],
+  "Firewall": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "RuleUid": "fixture-firewall-01",
+      "RuleName": "fixture-exception",
+      "Enabled": true,
+      "IncomingPorts": "443",
+      "OutgoingPorts": "514",
+      "Protocols": "TCP",
+      "ServiceRunning": false,
+      "Observation": "Reported",
+      "Assessment": "NotEvaluated"
+    }
+  ],
+  "Time": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "NtpServers": [
+        "ntp.example.invalid"
+      ],
+      "TimeZoneKey": "UTC",
+      "GmtOffsetSeconds": 0,
+      "ReportedProtocol": "fixture-reported-protocol",
+      "TimeServiceEnabled": true,
+      "ReportedServiceSync": false,
+      "LastSyncUtc": "2026-10-17T00:00:00Z",
+      "IndependentSyncVerified": false,
+      "Assessment": "NotEvaluated"
+    }
+  ],
+  "AdvancedSettings": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.logHost",
+      "SettingType": "String",
+      "Value": "ssl://syslog.example.invalid:1514",
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.logDir",
+      "SettingType": "String",
+      "Value": "[fixture-store] logs",
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.logDirUnique",
+      "SettingType": "Boolean",
+      "Value": true,
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.defaultRotate",
+      "SettingType": "Integer",
+      "Value": 8,
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.defaultSize",
+      "SettingType": "Integer",
+      "Value": 1024,
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    }
+  ]
+}

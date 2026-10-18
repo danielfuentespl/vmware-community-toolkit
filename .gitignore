@@ -1,0 +1,36 @@
+# Copyright (c) 2026 Daniel Fuentes
+# SPDX-License-Identifier: MIT
+# Private exports, credentials, certificates and test evidence
+private/
+sources/
+artifacts/
+reports/
+*.csv
+*.log
+*.trx
+TestResults*
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+*.kdbx
+SECURITY-ACTIONS*.md
+CANDIDATE-RIGHTS-EVIDENCE.json
+# Do not ignore JSON globally: fictional fixtures are versioned.
+# Keep real JSON exports outside this repository.
+# Generated distributions and local caches
+staging/
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~

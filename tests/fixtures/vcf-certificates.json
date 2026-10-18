@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "resourceName": "vcenter.example.invalid",
+      "resourceType": "VCENTER",
+      "notAfter": "2027-10-17T10:00:00Z",
+      "expirationStatus": "ACTIVE"
+    }
+  ],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "pageSize": 1,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

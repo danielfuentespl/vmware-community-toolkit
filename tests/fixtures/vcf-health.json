@@ -1,0 +1,15 @@
+{
+  "elements": [
+    {
+      "id": "fixture-task-01",
+      "status": "COMPLETED_WITH_SUCCESS",
+      "creationTimestamp": "2026-10-17T10:00:00Z"
+    }
+  ],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "pageSize": 1,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

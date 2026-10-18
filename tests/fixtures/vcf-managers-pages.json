@@ -1,0 +1,41 @@
+[
+  {
+    "elements": [
+      {
+        "id": "fixture-manager-01",
+        "fqdn": "sddc01.example.invalid",
+        "version": "fixture-build-a",
+        "domain": {
+          "id": "fixture-domain",
+          "type": "MANAGEMENT"
+        },
+        "basicAuthDetails": {
+          "status": "DISABLED",
+          "username": "fixture-only"
+        },
+        "ipAddress": "192.0.2.10"
+      }
+    ],
+    "pageMetadata": {
+      "pageNumber": 0,
+      "pageSize": 1,
+      "totalElements": 2,
+      "totalPages": 2
+    }
+  },
+  {
+    "elements": [
+      {
+        "id": "fixture-manager-02",
+        "fqdn": "sddc02.example.invalid",
+        "version": "fixture-build-b"
+      }
+    ],
+    "pageMetadata": {
+      "pageNumber": 1,
+      "pageSize": 1,
+      "totalElements": 2,
+      "totalPages": 2
+    }
+  }
+]

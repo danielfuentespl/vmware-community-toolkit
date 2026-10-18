@@ -1,0 +1,26 @@
+{
+  "elements": [
+    {
+      "id": "domain-fictional-01",
+      "name": "Fictional workload",
+      "status": "UPGRADING",
+      "upgradeState": "AVAILABLE",
+      "upgradeStatus": {
+        "status": "IN_PROGRESS",
+        "completedResources": 1,
+        "totalResources": 3
+      }
+    },
+    {
+      "id": "domain-fictional-02",
+      "name": "Fictional management",
+      "status": "ACTIVE"
+    }
+  ],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "pageSize": 2,
+    "totalElements": 2,
+    "totalPages": 1
+  }
+}

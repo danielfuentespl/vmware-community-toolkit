@@ -1,0 +1,12 @@
+{
+  "ScopeId":"fixture-endpoint-01",
+  "CapturedAt":"2026-10-17T00:00:00Z",
+  "Completeness":"Partial",
+  "VMs":[{"VMId":"VirtualMachine-fixture01","VM":"lab-vm01","PowerState":"PoweredOn","NumCpu":2,"MemoryGB":4,"VMHost":"esxi01.example.invalid"}],
+  "Tools":[{"VMId":"fixture01","VM":"lab-vm01","PowerState":"poweredOn","ToolsVersion":"12345","ToolsVersionStatus":"guestToolsCurrent","ToolsRunningStatus":"guestToolsRunning"}],
+  "Snapshots":[{"VMId":"VirtualMachine-fixture01","SnapshotId":"Snapshot-fixture01","VM":"lab-vm01","Snapshot":"lab-checkpoint","Created":"2026-10-01T02:00:00+02:00","SizeGB":2}],
+  "Datastores":[{"DatastoreId":"Datastore-fixture01","Datastore":"lab-store","Accessible":true,"CapacityGiB":100,"FreeGiB":25}],
+  "Hosts":[{"VMHostId":"fixture01","VMHost":"esxi01.example.invalid","ConnectionState":"connected","InMaintenanceMode":false,"AlarmStatus":"green"}],
+  "Ntp":[{"VMHostId":"HostSystem-fixture01","VMHost":"esxi01.example.invalid","NtpServers":["ntp.example.invalid"]}],
+  "Certificates":[{"Entity":"vc.example.invalid","Scope":"VCenter","CertificateUid":"fixture-ssl","NotBeforeUtc":"2026-01-01T00:00:00Z","NotAfterUtc":"2026-10-20T00:00:00Z"}]
+}

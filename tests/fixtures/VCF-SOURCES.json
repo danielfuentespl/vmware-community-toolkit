@@ -1,0 +1,92 @@
+[
+  {
+    "file": "vcf-domains-representative.json",
+    "tool": "Get-VCFInventory.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/domains/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Representative strict projection subset, not a captured API response or full schema validation"
+  },
+  {
+    "file": "vcf-managers-representative.json",
+    "tool": "Get-VCFVersions.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/sddc-managers/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Representative strict projection subset, not a captured API response or full schema validation"
+  },
+  {
+    "file": "vcf-health-representative.json",
+    "tool": "Get-VCFHealth.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/system/health-summary/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Representative strict projection subset, not a captured API response or full schema validation"
+  },
+  {
+    "file": "vcf-certificates-representative.json",
+    "tool": "Get-VCFCertificates.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/domains/id/resource-certificates/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Representative strict projection subset, not a captured API response or full schema validation"
+  },
+  {
+    "file": "vcf-error-only.json",
+    "tool": "All four VCF adapters",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/data-structures/Error/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Ambiguous mixed or error-only shape; must be rejected"
+  },
+  {
+    "file": "vcf-error-mixed.json",
+    "tool": "All four VCF adapters",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/data-structures/Error/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Ambiguous mixed or error-only shape; must be rejected"
+  },
+  {
+    "file": "vcf-domains-pages.json",
+    "tool": "Get-VCFInventory.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/domains/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Toolkit complete-export page array derived from synthetic representative fixture; not an API root response"
+  },
+  {
+    "file": "vcf-managers-pages.json",
+    "tool": "Get-VCFVersions.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/sddc-managers/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Toolkit complete-export page array derived from synthetic representative fixture; not an API root response"
+  },
+  {
+    "file": "vcf-health-pages.json",
+    "tool": "Get-VCFHealth.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/system/health-summary/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Toolkit complete-export page array derived from synthetic representative fixture; not an API root response"
+  },
+  {
+    "file": "vcf-certificates-pages.json",
+    "tool": "Get-VCFCertificates.ps1",
+    "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/domains/id/resource-certificates/get/",
+    "reviewed": "2026-10-17",
+    "synthetic": true,
+    "product_version_verified": false,
+    "scope": "Toolkit complete-export page array derived from synthetic representative fixture; not an API root response"
+  }
+]

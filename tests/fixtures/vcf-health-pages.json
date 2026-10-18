@@ -1,0 +1,44 @@
+[
+  {
+    "elements": [
+      {
+        "id": "fixture-task-1",
+        "status": "PENDING",
+        "creationTimestamp": "2026-10-17T10:00:00Z"
+      },
+      {
+        "id": "fixture-task-2",
+        "status": "IN_PROGRESS",
+        "creationTimestamp": "2026-10-17T12:00:00+02:00"
+      }
+    ],
+    "pageMetadata": {
+      "pageNumber": 0,
+      "pageSize": 2,
+      "totalElements": 4,
+      "totalPages": 2
+    }
+  },
+  {
+    "elements": [
+      {
+        "id": "fixture-task-3",
+        "status": "COMPLETED_WITH_SUCCESS",
+        "creationTimestamp": "2026-10-16T10:00:00Z",
+        "completionTimestamp": "2026-10-16T10:10:00Z",
+        "bundleName": "fixture-bundle"
+      },
+      {
+        "id": "fixture-task-4",
+        "status": "COMPLETED_WITH_FAILURE",
+        "creationTimestamp": "2026-10-15T10:00:00Z"
+      }
+    ],
+    "pageMetadata": {
+      "pageNumber": 1,
+      "pageSize": 2,
+      "totalElements": 4,
+      "totalPages": 2
+    }
+  }
+]

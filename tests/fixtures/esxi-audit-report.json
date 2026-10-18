@@ -1,0 +1,120 @@
+{
+  "ScopeId": "fixture-endpoint-01",
+  "CapturedAt": "2026-10-17T00:00:00Z",
+  "Completeness": "Unknown",
+  "HostSecurity": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "LockdownMode": "lockdownNormal",
+      "ServiceKey": "fixture-service",
+      "ServiceRunning": false,
+      "ServicePolicy": "off",
+      "Assessment": "NotEvaluated"
+    }
+  ],
+  "HostFirewall": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "RuleUid": "fixture-firewall-01",
+      "RuleName": "fixture-exception",
+      "Enabled": true,
+      "IncomingPorts": "443",
+      "OutgoingPorts": "Unknown",
+      "Protocols": "TCP",
+      "ServiceRunning": false,
+      "Observation": "Reported",
+      "Assessment": "NotEvaluated"
+    }
+  ],
+  "HostSyslog": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.logHost",
+      "SettingType": "String",
+      "Value": "ssl://syslog.example.invalid:1514",
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.logDir",
+      "SettingType": "String",
+      "Value": "[fixture-store] logs",
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.logDirUnique",
+      "SettingType": "Boolean",
+      "Value": true,
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.defaultRotate",
+      "SettingType": "Integer",
+      "Value": 8,
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    },
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "Syslog.global.defaultSize",
+      "SettingType": "Integer",
+      "Value": 1024,
+      "ValueState": "Reported",
+      "Assessment": "NotEvaluated",
+      "DeliveryVerified": false
+    }
+  ],
+  "HostAdvancedSettings": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "SettingName": "fixture.custom.setting",
+      "SettingType": "String",
+      "Value": "[Withheld]",
+      "ValueState": "Withheld",
+      "Assessment": "NotEvaluated"
+    }
+  ],
+  "HostTime": [
+    {
+      "VIServer": "vc.example.invalid",
+      "VMHost": "esxi01.example.invalid",
+      "VMHostId": "HostSystem-fixture01",
+      "NtpServers": [
+        "ntp.example.invalid"
+      ],
+      "TimeZoneKey": "UTC",
+      "GmtOffsetSeconds": 0,
+      "ReportedProtocol": "fixture-reported-protocol",
+      "TimeServiceEnabled": true,
+      "ReportedServiceSync": false,
+      "LastSyncUtc": "2026-10-17T00:00:00Z",
+      "IndependentSyncVerified": false,
+      "Assessment": "NotEvaluated"
+    }
+  ]
+}

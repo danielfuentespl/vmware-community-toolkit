@@ -1,0 +1,38 @@
+[
+  {
+    "alerts": [
+      {
+        "alertId": "00000000-0000-4000-8000-000000000001",
+        "resourceId": "00000000-0000-4000-8000-000000000099",
+        "alertLevel": "WARNING",
+        "status": "ACTIVE",
+        "controlState": "OPEN",
+        "startTimeUTC": 1750000000,
+        "updateTimeUTC": 1750000001
+      }
+    ],
+    "pageInfo": {
+      "page": 0,
+      "pageSize": 1,
+      "totalCount": 2
+    }
+  },
+  {
+    "alerts": [
+      {
+        "alertId": "00000000-0000-4000-8000-000000000002",
+        "resourceId": "00000000-0000-4000-8000-000000000099",
+        "alertLevel": "INFORMATION",
+        "status": "CANCELED",
+        "controlState": "OPEN",
+        "startTimeUTC": 1750000000,
+        "updateTimeUTC": 1750000001
+      }
+    ],
+    "pageInfo": {
+      "page": 1,
+      "pageSize": 1,
+      "totalCount": 2
+    }
+  }
+]

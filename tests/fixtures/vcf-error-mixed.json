@@ -1,0 +1,10 @@
+{
+  "elements": [],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "totalPages": 0,
+    "totalElements": 0
+  },
+  "errorCode": "SYNTHETIC_FAILURE",
+  "message": "Synthetic API failure; must never count as valid empty data"
+}

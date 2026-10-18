@@ -1,0 +1,26 @@
+{
+  "reviewDate": "2026-10-17",
+  "productVersionBinding": "Unverified; latest is mutable",
+  "realVmwareValidated": false,
+  "fixtures": [
+    {
+      "file": "vcf-lifecycle-phase12.json",
+      "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/domains/get/",
+      "purpose": "Fictional upgrade counters and missing upgradeStatus; operational domain status is not health"
+    },
+    {
+      "file": "vcf-alerts-phase12.json",
+      "source": "https://developer.broadcom.com/xapis/vcf-operations-api/latest/suite-api/api/alerts/get/",
+      "models": [
+        "https://developer.broadcom.com/xapis/vcf-operations-api/latest/data-structures/alert/",
+        "https://developer.broadcom.com/xapis/vcf-operations-api/latest/data-structures/page-info/"
+      ],
+      "purpose": "Complete invented two-page alerts collection; raw times retained without guessing units"
+    },
+    {
+      "file": "vcf-licensing-phase12.json",
+      "source": "https://developer.broadcom.com/xapis/sddc-manager-api/latest/v1/licensing-info/system/get/",
+      "purpose": "Single fictional system observation; registration differs from subscription; no keys"
+    }
+  ]
+}

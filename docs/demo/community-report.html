@@ -1,0 +1,448 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>vSphere offline health report</title><style>*{box-sizing:border-box}body{font-family:system-ui,sans-serif;margin:0 auto;padding:2rem;max-width:1600px;color:#17243a;background:#fafbfd;line-height:1.5}table{border-collapse:separate;border-spacing:0;width:100%;font-size:.9rem}th,td{border-bottom:1px solid #cdd7e3;padding:.65rem;text-align:left;overflow-wrap:anywhere;min-width:8rem}th{background:#e4edf7;position:sticky;top:0}tbody tr:nth-child(even){background:#f0f4f9}section{margin:2rem 0;padding:1rem;background:white;border:1px solid #cdd7e3;border-radius:.5rem;scroll-margin-top:1rem}.table-scroll{overflow:auto;max-height:65vh;border:1px solid #cdd7e3}h1,h2{color:#12385d}.notice{padding:1rem;border-left:4px solid #557999;background:#edf3fa}nav ul{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0}a{color:#154c7c}nav a{display:block;background:#e4edf7;padding:.4rem .7rem;border-radius:.3rem}.summary{display:flex;flex-wrap:wrap;gap:1rem}.summary p{flex:1 1 12rem;background:#edf3fa;padding:1rem;margin:0}a:focus,.table-scroll:focus{outline:3px solid #154c7c;outline-offset:3px}@media(max-width:600px){body{padding:.8rem}h1{font-size:1.6rem}section{padding:.6rem}th,td{padding:.45rem}}@media print{.table-scroll{max-height:none;overflow:visible}nav{display:none}th{position:static}}</style></head><body><h1>vSphere offline health report</h1>
+<p class="notice">Local data rendering only. Real VMware validation: Not performed. Alarm summaries do not certify hardware health; NTP configuration does not establish synchronization; certificate dates do not verify trust. Missing values are Unknown. Counts refer to provided rows.</p>
+<p>Scope: fixture-endpoint-01<br>Captured UTC: 2026-10-17T00:00:00.0000000+00:00<br>As of UTC: 2026-10-17T00:00:00.0000000+00:00<br>Caller-declared completeness: Partial</p>
+<h2>Executive summary</h2><div class="summary"><p>Sections with provided rows: 15</p><p>Empty collections: 0</p><p>Unknown collections: 0</p></div><p>Availability describes supplied collections, not completeness of individual fields or infrastructure health. Empty collections do not prove compliance.</p>
+<nav aria-label="Report sections"><ul>
+<li><a href="#section-VMs">Virtual machine inventory</a></li>
+<li><a href="#section-Tools">VMware Tools (last known)</a></li>
+<li><a href="#section-Snapshots">Snapshots and age</a></li>
+<li><a href="#section-Datastores">Datastore capacity</a></li>
+<li><a href="#section-Hosts">ESXi host alarm summaries</a></li>
+<li><a href="#section-Ntp">NTP configuration</a></li>
+<li><a href="#section-Certificates">Machine SSL certificate dates</a></li>
+<li><a href="#section-VCFLifecycle">SDDC Manager lifecycle observations (offline)</a></li>
+<li><a href="#section-VCFOperationsAlerts">VCF Operations alert observations (offline)</a></li>
+<li><a href="#section-VCFLicensing">SDDC Manager licensing observations (offline)</a></li>
+<li><a href="#section-HostSecurity">ESXi security configuration observations</a></li>
+<li><a href="#section-HostFirewall">ESXi firewall exception observations</a></li>
+<li><a href="#section-HostSyslog">ESXi syslog configuration observations</a></li>
+<li><a href="#section-HostTime">ESXi time configuration observations</a></li>
+<li><a href="#section-HostAdvancedSettings">ESXi advanced-setting observations</a></li>
+</ul></nav>
+<section id="section-VMs"><h2>Virtual machine inventory</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Virtual machine inventory table"><table><thead><tr>
+<th scope="col">VM</th>
+<th scope="col">VMId</th>
+<th scope="col">PowerState</th>
+<th scope="col">NumCpu</th>
+<th scope="col">MemoryGB</th>
+<th scope="col">VMHost</th>
+</tr></thead><tbody>
+<tr>
+<td>lab-vm01</td>
+<td>VirtualMachine-fixture01</td>
+<td>PoweredOn</td>
+<td>2</td>
+<td>4</td>
+<td>esxi01.example.invalid</td>
+</tr>
+</tbody></table></div>
+<p>Provided VM summary: CPU total 2; memory total GiB 4. Power states: PoweredOn 1, PoweredOff 0, Suspended 0, Unknown 0. Totals are Unknown when any contributing value is missing.</p>
+</section>
+<section id="section-Tools"><h2>VMware Tools (last known)</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="VMware Tools (last known) table"><table><thead><tr>
+<th scope="col">VM</th>
+<th scope="col">VMId</th>
+<th scope="col">PowerState</th>
+<th scope="col">ToolsVersion</th>
+<th scope="col">ToolsVersionStatus</th>
+<th scope="col">ToolsRunningStatus</th>
+</tr></thead><tbody>
+<tr>
+<td>lab-vm01</td>
+<td>fixture01</td>
+<td>poweredOn</td>
+<td>12345</td>
+<td>guestToolsCurrent</td>
+<td>guestToolsRunning</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-Snapshots"><h2>Snapshots and age</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Snapshots and age table"><table><thead><tr>
+<th scope="col">VM</th>
+<th scope="col">VMId</th>
+<th scope="col">Snapshot</th>
+<th scope="col">SnapshotId</th>
+<th scope="col">CreatedUtc</th>
+<th scope="col">AgeDays</th>
+<th scope="col">SizeGiB</th>
+</tr></thead><tbody>
+<tr>
+<td>lab-vm01</td>
+<td>VirtualMachine-fixture01</td>
+<td>lab-checkpoint</td>
+<td>Snapshot-fixture01</td>
+<td>2026-10-01T00:00:00.0000000+00:00</td>
+<td>16</td>
+<td>2</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-Datastores"><h2>Datastore capacity</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Datastore capacity table"><table><thead><tr>
+<th scope="col">Datastore</th>
+<th scope="col">DatastoreId</th>
+<th scope="col">Accessible</th>
+<th scope="col">CapacityGiB</th>
+<th scope="col">FreeGiB</th>
+<th scope="col">UsedGiB</th>
+<th scope="col">UsedPercent</th>
+</tr></thead><tbody>
+<tr>
+<td>lab-store</td>
+<td>Datastore-fixture01</td>
+<td>True</td>
+<td>100</td>
+<td>25</td>
+<td>75</td>
+<td>75</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-Hosts"><h2>ESXi host alarm summaries</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="ESXi host alarm summaries table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">ConnectionState</th>
+<th scope="col">InMaintenanceMode</th>
+<th scope="col">AlarmStatus</th>
+<th scope="col">HardwareHealth</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>fixture01</td>
+<td>connected</td>
+<td>False</td>
+<td>green</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-Ntp"><h2>NTP configuration</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="NTP configuration table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">NtpServers</th>
+<th scope="col">Synchronization</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>ntp.example.invalid</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-Certificates"><h2>Machine SSL certificate dates</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Machine SSL certificate dates table"><table><thead><tr>
+<th scope="col">Entity</th>
+<th scope="col">Scope</th>
+<th scope="col">CertificateUid</th>
+<th scope="col">NotBeforeUtc</th>
+<th scope="col">NotAfterUtc</th>
+<th scope="col">DaysToExpiry</th>
+<th scope="col">DateStatus</th>
+<th scope="col">TrustVerified</th>
+</tr></thead><tbody>
+<tr>
+<td>vc.example.invalid</td>
+<td>VCenter</td>
+<td>fixture-ssl</td>
+<td>2026-01-01T00:00:00.0000000+00:00</td>
+<td>2026-10-20T00:00:00.0000000+00:00</td>
+<td>3</td>
+<td>WithinDateWindow</td>
+<td>False</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-VCFLifecycle"><h2>SDDC Manager lifecycle observations (offline)</h2>
+<p>Provided rows: 2</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="SDDC Manager lifecycle observations (offline) table"><table><thead><tr>
+<th scope="col">Source</th>
+<th scope="col">SourceVersion</th>
+<th scope="col">Endpoint</th>
+<th scope="col">Domain</th>
+<th scope="col">DomainId</th>
+<th scope="col">DomainStatus</th>
+<th scope="col">UpgradeState</th>
+<th scope="col">UpgradeStatus</th>
+<th scope="col">CompletedResources</th>
+<th scope="col">TotalResources</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>SDDC Manager</td>
+<td>fictional-unverified</td>
+<td>/v1/domains</td>
+<td>Fictional workload</td>
+<td>domain-fictional-01</td>
+<td>UPGRADING</td>
+<td>AVAILABLE</td>
+<td>IN_PROGRESS</td>
+<td>1</td>
+<td>3</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>SDDC Manager</td>
+<td>fictional-unverified</td>
+<td>/v1/domains</td>
+<td>Fictional management</td>
+<td>domain-fictional-02</td>
+<td>ACTIVE</td>
+<td>Unknown</td>
+<td>Unknown</td>
+<td>Unknown</td>
+<td>Unknown</td>
+<td>Unknown</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-VCFOperationsAlerts"><h2>VCF Operations alert observations (offline)</h2>
+<p>Provided rows: 2</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="VCF Operations alert observations (offline) table"><table><thead><tr>
+<th scope="col">Source</th>
+<th scope="col">SourceVersion</th>
+<th scope="col">Endpoint</th>
+<th scope="col">AlertId</th>
+<th scope="col">ResourceId</th>
+<th scope="col">AlertLevel</th>
+<th scope="col">AlertStatus</th>
+<th scope="col">ControlState</th>
+<th scope="col">TimestampUnit</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>VCF Operations</td>
+<td>fictional-unverified</td>
+<td>/suite-api/api/alerts</td>
+<td>00000000-0000-4000-8000-000000000001</td>
+<td>00000000-0000-4000-8000-000000000099</td>
+<td>WARNING</td>
+<td>ACTIVE</td>
+<td>OPEN</td>
+<td>Unknown</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>VCF Operations</td>
+<td>fictional-unverified</td>
+<td>/suite-api/api/alerts</td>
+<td>00000000-0000-4000-8000-000000000002</td>
+<td>00000000-0000-4000-8000-000000000099</td>
+<td>INFORMATION</td>
+<td>CANCELED</td>
+<td>OPEN</td>
+<td>Unknown</td>
+<td>Unknown</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-VCFLicensing"><h2>SDDC Manager licensing observations (offline)</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="SDDC Manager licensing observations (offline) table"><table><thead><tr>
+<th scope="col">Source</th>
+<th scope="col">SourceVersion</th>
+<th scope="col">Endpoint</th>
+<th scope="col">ResourceType</th>
+<th scope="col">LicensingMode</th>
+<th scope="col">SubscriptionStatus</th>
+<th scope="col">SubscribedState</th>
+<th scope="col">IsRegistered</th>
+<th scope="col">IsSubscribed</th>
+<th scope="col">DaysRemainingToSubscribe</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>SDDC Manager</td>
+<td>fictional-unverified</td>
+<td>/v1/licensing-info/system</td>
+<td>SYSTEM</td>
+<td>SUBSCRIPTION</td>
+<td>ACTIVE</td>
+<td>PARTIALLY_SUBSCRIBED</td>
+<td>True</td>
+<td>False</td>
+<td>5</td>
+<td>Unknown</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-HostSecurity"><h2>ESXi security configuration observations</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="ESXi security configuration observations table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">LockdownMode</th>
+<th scope="col">ServiceKey</th>
+<th scope="col">ServiceRunning</th>
+<th scope="col">ServicePolicy</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>lockdownNormal</td>
+<td>fixture-service</td>
+<td>False</td>
+<td>off</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-HostFirewall"><h2>ESXi firewall exception observations</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="ESXi firewall exception observations table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">RuleUid</th>
+<th scope="col">RuleName</th>
+<th scope="col">Enabled</th>
+<th scope="col">IncomingPorts</th>
+<th scope="col">OutgoingPorts</th>
+<th scope="col">Protocols</th>
+<th scope="col">ServiceRunning</th>
+<th scope="col">Observation</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>fixture-firewall-01</td>
+<td>fixture-exception</td>
+<td>True</td>
+<td>443</td>
+<td>Unknown</td>
+<td>TCP</td>
+<td>False</td>
+<td>Reported</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-HostSyslog"><h2>ESXi syslog configuration observations</h2>
+<p>Provided rows: 5</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="ESXi syslog configuration observations table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">SettingName</th>
+<th scope="col">SettingType</th>
+<th scope="col">Value</th>
+<th scope="col">ValueState</th>
+<th scope="col">DeliveryVerified</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>Syslog.global.logHost</td>
+<td>String</td>
+<td>ssl://syslog.example.invalid:1514</td>
+<td>Reported</td>
+<td>False</td>
+<td>NotEvaluated</td>
+</tr>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>Syslog.global.logDir</td>
+<td>String</td>
+<td>[fixture-store] logs</td>
+<td>Reported</td>
+<td>False</td>
+<td>NotEvaluated</td>
+</tr>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>Syslog.global.logDirUnique</td>
+<td>Boolean</td>
+<td>True</td>
+<td>Reported</td>
+<td>False</td>
+<td>NotEvaluated</td>
+</tr>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>Syslog.global.defaultRotate</td>
+<td>Integer</td>
+<td>8</td>
+<td>Reported</td>
+<td>False</td>
+<td>NotEvaluated</td>
+</tr>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>Syslog.global.defaultSize</td>
+<td>Integer</td>
+<td>1024</td>
+<td>Reported</td>
+<td>False</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-HostTime"><h2>ESXi time configuration observations</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="ESXi time configuration observations table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">NtpServers</th>
+<th scope="col">TimeZoneKey</th>
+<th scope="col">GmtOffsetSeconds</th>
+<th scope="col">ReportedProtocol</th>
+<th scope="col">TimeServiceEnabled</th>
+<th scope="col">ReportedServiceSync</th>
+<th scope="col">LastSyncUtc</th>
+<th scope="col">IndependentSyncVerified</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>ntp.example.invalid</td>
+<td>UTC</td>
+<td>0</td>
+<td>fixture-reported-protocol</td>
+<td>True</td>
+<td>False</td>
+<td>2026-10-17T00:00:00.0000000+00:00</td>
+<td>False</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="section-HostAdvancedSettings"><h2>ESXi advanced-setting observations</h2>
+<p>Provided rows: 1</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="ESXi advanced-setting observations table"><table><thead><tr>
+<th scope="col">VMHost</th>
+<th scope="col">VMHostId</th>
+<th scope="col">SettingName</th>
+<th scope="col">SettingType</th>
+<th scope="col">Value</th>
+<th scope="col">ValueState</th>
+<th scope="col">Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td>esxi01.example.invalid</td>
+<td>HostSystem-fixture01</td>
+<td>fixture.custom.setting</td>
+<td>String</td>
+<td>[Withheld]</td>
+<td>Withheld</td>
+<td>NotEvaluated</td>
+</tr>
+</tbody></table></div>
+</section>
+</body></html>

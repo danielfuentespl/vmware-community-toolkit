@@ -1,0 +1,15 @@
+{
+  "elements": [
+    {
+      "id": "fixture-manager-01",
+      "fqdn": "sddc.example.invalid",
+      "version": "fixture-version"
+    }
+  ],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "pageSize": 1,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,45 @@
+# Copyright (c) 2026 Daniel Fuentes
+# SPDX-License-Identifier: MIT
+name: Offline validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      POWERSHELL_TELEMETRY_OPTOUT: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install pinned test dependencies
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Install-Module -Name Pester -RequiredVersion 6.2.0 -Repository PSGallery -Scope CurrentUser -Force -ErrorAction Stop
+          Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.25.0 -Repository PSGallery -Scope CurrentUser -Force -ErrorAction Stop
+      - name: Analyze PowerShell and run mocked tests
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Import-Module Pester -RequiredVersion 6.2.0 -ErrorAction Stop
+          Import-Module PSScriptAnalyzer -RequiredVersion 1.25.0 -ErrorAction Stop
+          $PSVersionTable
+          Get-Module Pester,PSScriptAnalyzer | Select-Object Name,Version
+          ./tests/Invoke-Validation.ps1
+          $issues = @(Invoke-ScriptAnalyzer -Path ./examples -Recurse -Settings ./PSScriptAnalyzerSettings.psd1)
+          if ($issues.Count) { throw 'Example static analysis failed.' }
+      - name: Validate packaging and public documentation
+        run: |
+          python3 --version
+          python3 -B -m unittest discover -s tests -p 'test_*.py'
+          python3 -B tools/check_public_content.py
+      - name: Exercise the fictional offline example
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $output = Join-Path $env:RUNNER_TEMP ('toolkit-demo-' + [guid]::NewGuid().ToString('N') + '.html')
+          $demo = ./examples/Invoke-CommunityOfflineDemo.ps1 -OutputPath $output
+          if ($demo.RealVmwareValidated -or $demo.Changes.Count -ne 5) { throw 'Unexpected demo contract.' }

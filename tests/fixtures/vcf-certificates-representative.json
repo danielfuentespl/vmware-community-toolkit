@@ -1,0 +1,32 @@
+{
+  "elements": [
+    {
+      "resourceName": "vc01.example.invalid",
+      "resourceType": "VCENTER",
+      "notAfter": "2027-10-17T10:00:00Z",
+      "expirationStatus": "ACTIVE",
+      "subjectAlternativeName": [
+        "vc01.example.invalid"
+      ],
+      "publicKey": "fixture-public-key",
+      "pemEncoded": "fixture-certificate-omitted"
+    },
+    {
+      "resourceName": "esxi01.example.invalid",
+      "resourceType": "ESXI",
+      "notAfter": "2025-10-17T10:00:00Z",
+      "expirationStatus": "EXPIRED"
+    },
+    {
+      "resourceName": "nsx01.example.invalid",
+      "resourceType": "NSXT_MANAGER",
+      "getCertificateError": "Synthetic retrieval failure; never output raw text"
+    }
+  ],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "pageSize": 3,
+    "totalElements": 3,
+    "totalPages": 1
+  }
+}

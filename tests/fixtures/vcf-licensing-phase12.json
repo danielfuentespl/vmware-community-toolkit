@@ -1,0 +1,9 @@
+{
+  "resourceType": "SYSTEM",
+  "licensingMode": "SUBSCRIPTION",
+  "subscriptionStatus": "ACTIVE",
+  "subscribedState": "PARTIALLY_SUBSCRIBED",
+  "isRegistered": true,
+  "isSubscribed": false,
+  "daysRemainingToSubscribe": 5
+}

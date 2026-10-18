@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "id": "fixture-domain-01",
+      "name": "lab-domain",
+      "type": "MANAGEMENT",
+      "status": "ACTIVE"
+    }
+  ],
+  "pageMetadata": {
+    "pageNumber": 0,
+    "pageSize": 1,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

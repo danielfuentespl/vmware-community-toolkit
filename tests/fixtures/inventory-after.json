@@ -1,0 +1,8 @@
+{
+  "ScopeId":"fixture-endpoint-01","IdentityKind":"PowerCliId","SelectionId":"all-visible-vms-v1",
+  "CapturedAt":"2026-10-17T00:00:00Z","Completeness":"Complete",
+  "VMs":[
+    {"VMId":"VirtualMachine-fixture01","VM":"lab-renamed","NumCpu":4,"MemoryGB":8,"PowerState":"PoweredOff"},
+    {"VMId":"VirtualMachine-fixture03","VM":"lab-vm03","NumCpu":1,"MemoryGB":2,"PowerState":"PoweredOn"}
+  ]
+}

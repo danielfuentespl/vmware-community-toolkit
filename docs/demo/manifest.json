@@ -1,0 +1,61 @@
+{
+  "baseline_commit": "ba39886",
+  "capture_date": "2026-10-17",
+  "data": "Fictional fixtures only",
+  "validation": "Offline processing and local browser rendering; no VMware validation",
+  "browser": "Chromium 152.0.7977.82 Arch Linux",
+  "network_boundary": "Fresh Linux user/network namespace; only down loopback; zero successful socket connections",
+  "artifacts": {
+    "community-report.html": {
+      "sha256": "f0ab3fab47c0fc3f3b6a08a4275e26172b639f315c403562d384b5931f555a64",
+      "bytes": 16002
+    },
+    "community-desktop.png": {
+      "sha256": "263e65c0e896382097073fc778ed9031d78cf4ed2d3dd90f389874498f2cb23b",
+      "bytes": 139344,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    "community-narrow.png": {
+      "sha256": "a7159ed50eb6af72c17f7440b00e782bbfecfb950ae252818e3012eeccea0ace",
+      "bytes": 105000,
+      "dimensions": [
+        500,
+        1000
+      ]
+    }
+  },
+  "input_sha256": {
+    "examples/Invoke-CommunityOfflineDemo.ps1": "ed1a7f11e2c84a43ecf2b4784db792a38a260adc1a7d092fef42bb5377bf6468",
+    "scripts/Reporting/New-vSphereHealthReport.ps1": "c2970ad0188284ac30653b27d8adfcfe9008b59941193729ccb5a59ecd89043e",
+    "tests/fixtures/unified-report.json": "d070bdc75f5d8091a8a6a7c8889cac43d488b98013e9c0f59e7f550db651d5a8",
+    "tests/fixtures/esxi-audit-report.json": "cf42d56af11cde8de8715468d83add0a3b2dd7ad1aec6a6c2eff14c8e89aa072",
+    "tests/fixtures/inventory-before.json": "d54823fc9771a6b61b09a164fcc4235e7e527eaa983499190a9f827050737141",
+    "tests/fixtures/inventory-after.json": "56c4a1d0dba6ae327f6c084c46c8fa9933a0077cc4d6ab34ea55042ec451219e",
+    "tests/fixtures/vcf-certificates-pages.json": "e5feaee4529ca7e67cf060535bacf4b27b27424638ff96abe9b64b45959a1bff",
+    "tests/fixtures/vcf-domains-pages.json": "106e69cc471c339a5427e209eb1d19a9455393de8092864b600385b3c3620351",
+    "tests/fixtures/vcf-health-pages.json": "1f61162c8e50dfea85c75d471ba73a1cb5ef53c4f253b287988a6a422424e23c",
+    "tests/fixtures/vcf-managers-pages.json": "9c66c9051e4fe58e6393e2042655d6fcc0107fd62328153a4a13adf97d0ee652",
+    "tests/fixtures/vcf-lifecycle-phase12.json": "512b3ba8d8e525b58638eb2cd2cbc86c47ba9bac844f23726e5100f6288cfc41",
+    "tests/fixtures/vcf-alerts-phase12.json": "5713bb566e65de9c1256e80e330213846f64f53d1c7cee7656cee43655ee6349",
+    "tests/fixtures/vcf-licensing-phase12.json": "6443d88f382a05123f02e5bb47b0aab7f0a9f88312dfd21a27cddcccdab271ab"
+  },
+  "current_input_sha256": {
+    "examples/Invoke-CommunityOfflineDemo.ps1": "3e9baa097b9e02719c2fd0f480c02ed16090552794677153957090786ec79e12",
+    "scripts/Reporting/New-vSphereHealthReport.ps1": "9bf1a47c79ef2c56edcb90abe615a04b44164ba3c8f412a02cc8f144bb8a36a8",
+    "tests/fixtures/unified-report.json": "d070bdc75f5d8091a8a6a7c8889cac43d488b98013e9c0f59e7f550db651d5a8",
+    "tests/fixtures/esxi-audit-report.json": "cf42d56af11cde8de8715468d83add0a3b2dd7ad1aec6a6c2eff14c8e89aa072",
+    "tests/fixtures/inventory-before.json": "d54823fc9771a6b61b09a164fcc4235e7e527eaa983499190a9f827050737141",
+    "tests/fixtures/inventory-after.json": "56c4a1d0dba6ae327f6c084c46c8fa9933a0077cc4d6ab34ea55042ec451219e",
+    "tests/fixtures/vcf-certificates-pages.json": "e5feaee4529ca7e67cf060535bacf4b27b27424638ff96abe9b64b45959a1bff",
+    "tests/fixtures/vcf-domains-pages.json": "106e69cc471c339a5427e209eb1d19a9455393de8092864b600385b3c3620351",
+    "tests/fixtures/vcf-health-pages.json": "1f61162c8e50dfea85c75d471ba73a1cb5ef53c4f253b287988a6a422424e23c",
+    "tests/fixtures/vcf-managers-pages.json": "9c66c9051e4fe58e6393e2042655d6fcc0107fd62328153a4a13adf97d0ee652",
+    "tests/fixtures/vcf-lifecycle-phase12.json": "512b3ba8d8e525b58638eb2cd2cbc86c47ba9bac844f23726e5100f6288cfc41",
+    "tests/fixtures/vcf-alerts-phase12.json": "5713bb566e65de9c1256e80e330213846f64f53d1c7cee7656cee43655ee6349",
+    "tests/fixtures/vcf-licensing-phase12.json": "6443d88f382a05123f02e5bb47b0aab7f0a9f88312dfd21a27cddcccdab271ab"
+  },
+  "provenance_note": "Original fictional capture metadata and input_sha256 are retained; baseline_commit identifies the development base. current_input_sha256 records the source inputs after MIT notices. Regenerated HTML is compared byte-for-byte; no new VMware/browser functional claim."
+}

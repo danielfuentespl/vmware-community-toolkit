@@ -1,0 +1,48 @@
+[
+  {
+    "elements": [
+      {
+        "id": "fixture-domain-01",
+        "name": "lab-management",
+        "type": "MANAGEMENT",
+        "status": "ACTIVE",
+        "vcenters": [
+          {
+            "id": "fixture-vc",
+            "fqdn": "vc.example.invalid"
+          }
+        ],
+        "owners": [
+          "fixture-operator"
+        ]
+      }
+    ],
+    "pageMetadata": {
+      "pageNumber": 0,
+      "pageSize": 1,
+      "totalElements": 2,
+      "totalPages": 2
+    }
+  },
+  {
+    "elements": [
+      {
+        "id": "fixture-domain-02",
+        "name": "lab-workload",
+        "type": "VI",
+        "status": "ERROR",
+        "capacity": {
+          "cpu": {
+            "numberOfCores": 16
+          }
+        }
+      }
+    ],
+    "pageMetadata": {
+      "pageNumber": 1,
+      "pageSize": 1,
+      "totalElements": 2,
+      "totalPages": 2
+    }
+  }
+]

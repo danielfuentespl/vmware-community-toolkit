@@ -1,0 +1,15 @@
+{
+  "synthetic":true,
+  "hosts":[{"Id":"HostSystem-fixture01","Name":"esxi01.example.invalid"}],
+  "views":[{"MoRef":{"Type":"HostSystem","Value":"fixture01"},"Config":{"LockdownMode":"lockdownNormal","DateTimeInfo":{"TimeZone":{"Key":"UTC","GmtOffset":0},"SystemClockProtocol":"ntp","Enabled":true,"ServiceSync":false,"LastSyncTime":"2026-10-17T00:00:00Z"}}}],
+  "services":[{"Key":"fixture-service","Running":false,"Policy":"off"}],
+  "firewall":[{"Uid":"fixture-firewall-01","Name":"fixture-exception","Enabled":true,"IncomingPorts":"443","OutgoingPorts":"","Protocols":"TCP","ServiceRunning":false}],
+  "settings":[
+    {"Name":"Syslog.global.logHost","Type":"String","Value":"ssl://syslog.example.invalid:1514"},
+    {"Name":"Syslog.global.logDir","Type":"String","Value":"[fixture-store] logs"},
+    {"Name":"Syslog.global.logDirUnique","Type":"Boolean","Value":true},
+    {"Name":"Syslog.global.defaultRotate","Type":"Integer","Value":8},
+    {"Name":"Syslog.global.defaultSize","Type":"Integer","Value":1024}
+  ],
+  "ntpServers":["ntp.example.invalid"]
+}

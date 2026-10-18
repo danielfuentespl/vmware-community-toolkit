@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "vmViews": [
+    {"MoRef":{"Type":"VirtualMachine","Value":"fixture-vm-01"},"Name":"lab-vm01","Runtime":{"PowerState":"poweredOn"},"Guest":{"ToolsVersion":"12345","ToolsVersionStatus2":"guestToolsCurrent","ToolsRunningStatus":"guestToolsRunning"}},
+    {"MoRef":{"Type":"VirtualMachine","Value":"fixture-vm-02"},"Name":"lab-vm02","Runtime":{"PowerState":"poweredOff"},"Guest":null}
+  ],
+  "hostViews": [
+    {"MoRef":{"Type":"HostSystem","Value":"fixture-host-01"},"Name":"esxi01.example.invalid","Summary":{"OverallStatus":"green"},"Runtime":{"ConnectionState":"connected","InMaintenanceMode":false}},
+    {"MoRef":{"Type":"HostSystem","Value":"fixture-host-02"},"Name":"esxi02.example.invalid","Summary":{"OverallStatus":"gray"},"Runtime":{"ConnectionState":"disconnected","InMaintenanceMode":true}}
+  ],
+  "stores": [
+    {"Id":"Datastore-fixture01","Name":"lab-store01","Accessible":true,"CapacityGB":100,"FreeSpaceGB":25},
+    {"Id":"Datastore-fixture02","Name":"lab-store02","Accessible":false}
+  ],
+  "hosts": [
+    {"Id":"HostSystem-fixture01","Name":"esxi01.example.invalid"},
+    {"Id":"HostSystem-fixture02","Name":"esxi02.example.invalid"}
+  ],
+  "ntpServers": ["ntp01.example.invalid","192.0.2.123"],
+  "vms": [{"Id":"VirtualMachine-fixture01","Name":"lab-vm01"}],
+  "snapshots": [
+    {"Id":"Snapshot-fixture01","Name":"lab-old","Created":"2026-10-01T00:00:00Z","SizeGB":2},
+    {"Id":"Snapshot-fixture02","Name":"lab-boundary","Created":"2026-10-10T00:00:00Z","SizeGB":0}
+  ],
+  "certificate": {"Uid":"fixture-machine-ssl","NotValidBefore":"2026-01-01T00:00:00Z","NotValidAfter":"2026-10-20T00:00:00Z"}
+}

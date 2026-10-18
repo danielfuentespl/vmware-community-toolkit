@@ -1,0 +1,11 @@
+{
+  "synthetic": true,
+  "connection": {"Name":"vc.example.invalid","IsConnected":true},
+  "vms": [
+    {"Name":"fixture-vm01","PowerState":"PoweredOn","NumCpu":2,"MemoryGB":4,"VMHost":"esxi01.example.invalid"},
+    {"Name":"fixture-vm02","PowerState":"PoweredOff","NumCpu":4,"MemoryGB":8,"VMHost":"esxi02.example.invalid"}
+  ],
+  "snapshot": {"Name":"fixture-checkpoint","Created":"2026-01-01T00:00:00Z","SizeGB":0},
+  "hosts": [{"Name":"esxi01.example.invalid"},{"Name":"esxi02.example.invalid"}],
+  "network": {"DnsAddress":[],"DomainName":"example.invalid","SearchDomain":[]}
+}

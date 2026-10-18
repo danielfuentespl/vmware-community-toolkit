@@ -1,0 +1,6 @@
+{
+  "errorCode": "SYNTHETIC_UNAUTHORIZED",
+  "errorType": "SYNTHETIC_ACCESS_FAILURE",
+  "message": "Synthetic authorization failure",
+  "nestedErrors": []
+}
