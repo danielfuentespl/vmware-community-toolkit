@@ -99,9 +99,11 @@ Describe 'New read-only tool <Tool>' -ForEach @(
     It 'Stops on provider warnings instead of claiming complete inventory' {
         Mock $Primary { Write-Warning 'fixture-private-warning' }
         $failure=$null
-        try { & $toolPath @arguments } catch { $failure=$_ }
+        $captured=[Collections.Generic.List[object]]::new()
+        try { & $toolPath @arguments 3>&1 | ForEach-Object { $captured.Add($_) } } catch { $failure=$_ }
         $failure | Should -Not -BeNullOrEmpty
         $failure.Exception.Message | Should -Not -Match 'fixture-private-warning'
+        $captured.Count | Should -Be 0
     }
     It 'Rejects whitespace name filters' {
         $arguments.Name=' '

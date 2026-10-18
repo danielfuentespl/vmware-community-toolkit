@@ -123,7 +123,8 @@
     "tests/test_distribution.py",
     "tests/test_public_content.py",
     "tools/build_offline_candidate.py",
-    "tools/check_public_content.py"
+    "tools/check_public_content.py",
+    "tools/install_ci_dependencies.py"
   ],
   "excluded_tracked": [
     "tests/Phase14.Tests.ps1",

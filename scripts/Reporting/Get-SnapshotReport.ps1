@@ -36,9 +36,9 @@ Import-Module (Join-Path $PSScriptRoot '../Private/Toolkit.Common.psm1') -Scope 
 Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
-        $machines = @(Get-VM -Server $Server -Name $Name -ErrorAction Stop)
+        $machines = @(Get-VM -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop 3>$null)
         foreach ($machine in $machines) {
-            Get-Snapshot -Server $Server -VM $machine -ErrorAction Stop | ForEach-Object {
+            Get-Snapshot -Server $Server -VM $machine -ErrorAction Stop -WarningAction Stop 3>$null | ForEach-Object {
                 if ($null -eq $_.SizeGB -or $_.SizeGB -isnot [ValueType] -or $_.SizeGB -is [bool] -or -not [double]::IsFinite([double] $_.SizeGB) -or $_.SizeGB -lt 0) { throw 'Snapshot size unavailable.' }
                 $record = [ordered]@{
                     VIServer = $Server.Name

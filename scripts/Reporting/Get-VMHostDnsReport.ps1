@@ -33,9 +33,9 @@ Import-Module (Join-Path $PSScriptRoot '../Private/Toolkit.Common.psm1') -Scope 
 Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
-        $hosts = @(Get-VMHost -Server $Server -Name $Name -ErrorAction Stop)
+        $hosts = @(Get-VMHost -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop 3>$null)
         foreach ($esxi in $hosts) {
-            $network = Get-VMHostNetwork -Server $Server -VMHost $esxi -ErrorAction Stop
+            $network = Get-VMHostNetwork -Server $Server -VMHost $esxi -ErrorAction Stop -WarningAction Stop 3>$null
             if (@($network).Count -ne 1 -or $null -eq $network) { throw 'Ambiguous host network result.' }
             [pscustomobject]@{
                 VIServer = $Server.Name

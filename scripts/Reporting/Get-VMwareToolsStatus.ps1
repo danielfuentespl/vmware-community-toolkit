@@ -40,7 +40,7 @@ Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
         $seen = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
-        $views = @(Get-View -Server $Server -ViewType VirtualMachine -Property Name,Guest.ToolsVersion,Guest.ToolsVersionStatus2,Guest.ToolsRunningStatus,Runtime.PowerState -ErrorAction Stop -WarningAction Stop)
+        $views = @(Get-View -Server $Server -ViewType VirtualMachine -Property Name,Guest.ToolsVersion,Guest.ToolsVersionStatus2,Guest.ToolsRunningStatus,Runtime.PowerState -ErrorAction Stop -WarningAction Stop 3>$null)
         foreach ($view in $views) {
             if ($view.MoRef.Type -ne 'VirtualMachine') { throw 'Unexpected managed object type.' }
             $id = ConvertTo-ToolkitText -Value $view.MoRef.Value

@@ -11,15 +11,17 @@ jobs:
     env:
       POWERSHELL_TELEMETRY_OPTOUT: '1'
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 (official tag; GitHub-verified commit)
         with:
           persist-credentials: false
-      - name: Install pinned test dependencies
+      - name: Verify and install locked test dependencies
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          Install-Module -Name Pester -RequiredVersion 6.2.0 -Repository PSGallery -Scope CurrentUser -Force -ErrorAction Stop
-          Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.25.0 -Repository PSGallery -Scope CurrentUser -Force -ErrorAction Stop
+          $modules = Join-Path $env:RUNNER_TEMP 'toolkit-verified-modules'
+          python3 -B ./tools/install_ci_dependencies.py $modules
+          if ($LASTEXITCODE -ne 0) { throw 'CI dependency verification failed.' }
+          "PSModulePath=$modules$([IO.Path]::PathSeparator)$env:PSModulePath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       - name: Analyze PowerShell and run mocked tests
         shell: pwsh
         run: |

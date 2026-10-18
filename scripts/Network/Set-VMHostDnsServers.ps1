@@ -46,16 +46,16 @@ if (@($canonical | Sort-Object -Unique).Count -ne $canonical.Count) {
     throw 'Duplicate DNS addresses are not permitted, including equivalent IPv6 representations.'
 }
 try {
-    $hosts = @(Get-VMHost -Server $Server -Name $VMHostName -ErrorAction Stop)
+    $hosts = @(Get-VMHost -Server $Server -Name $VMHostName -ErrorAction Stop -WarningAction Stop 3>$null)
     if ($hosts.Count -ne 1 -or $hosts[0].Name -ne $VMHostName) {
         throw 'Exactly one host with the requested exact name is required.'
     }
-    $network = @(Get-VMHostNetwork -Server $Server -VMHost $hosts[0] -ErrorAction Stop)
+    $network = @(Get-VMHostNetwork -Server $Server -VMHost $hosts[0] -ErrorAction Stop -WarningAction Stop 3>$null)
     if ($network.Count -ne 1 -or $null -eq $network[0]) { throw 'Exactly one host network object is required.' }
     if ($PSCmdlet.ShouldProcess($VMHostName, 'Replace DNS server addresses and disable DHCP DNS')) {
         # Bind the object selected through the explicit connection; this cmdlet has no Server parameter.
         $null = Set-VMHostNetwork -Network $network[0] -DnsFromDhcp $false -DnsAddress $canonical -Confirm:$false -ErrorAction Stop
-        $after = @(Get-VMHostNetwork -Server $Server -VMHost $hosts[0] -ErrorAction Stop)
+        $after = @(Get-VMHostNetwork -Server $Server -VMHost $hosts[0] -ErrorAction Stop -WarningAction Stop 3>$null)
         if ($after.Count -ne 1 -or $null -eq $after[0]) { throw 'DNS read-back unavailable.' }
         $actual = @($after[0].DnsAddress | ForEach-Object { ConvertTo-ToolkitDnsAddress -Address $_ })
         if (($actual -join '|') -cne ($canonical -join '|') -or

@@ -42,7 +42,7 @@ Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
         $seen = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
-        $stores=@(Get-Datastore -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop)
+        $stores=@(Get-Datastore -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop 3>$null)
         foreach ($store in $stores) {
             $id=ConvertTo-ToolkitText -Value $store.Id
             Assert-ToolkitUniqueIdentity -Seen $seen -Id $id

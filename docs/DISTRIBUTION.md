@@ -11,7 +11,7 @@ python3 -B tools/build_offline_candidate.py ../staging/v0.1.0-rc5
 python3 -B tools/build_offline_candidate.py ../staging/v0.1.0-rc5 --verify
 ```
 
-Existing destinations, symlinks, traversal, dirty source, untracked input and an unapproved MIT scope/notice are rejected. New files require provenance/scope review before inclusion. Internal files tracked in a review checkout are not automatically selected; its Git history is not a public distribution. A future public source repository must use the approved positive list, under separately authorized preparation.
+Existing destinations, symlinks, traversal, dirty source, untracked input and an unapproved MIT scope/notice are rejected. New files require provenance/scope review before inclusion. Internal files tracked in a review checkout are not automatically selected; its Git history is not a public distribution. The published source repository uses this approved positive list; excluded review history was not imported.
 
 ## Verify a supplied package
 
@@ -21,6 +21,6 @@ Inside a history-free candidate containing the generated manifest:
 python3 -B tools/build_offline_candidate.py . --verify
 ```
 
-The exact file set and hashes are checked, including extra files. `sha256sum --check SHA256SUMS` verifies listed hashes only. BUILD-METADATA records the original source commit, epoch, version, exact MIT scope and notice; publication stays false. SHA256SUMS covers all source files and generated metadata except itself; neither is a publisher signature or proof of legal origin. Git source checkouts do not need generated package files to run tests or the fictional demo.
+The exact file set and hashes are checked, including extra files. `sha256sum --check SHA256SUMS` verifies listed hashes only. BUILD-METADATA records the original source commit, epoch, version, exact MIT scope and notice; the generated package records that packaging does not itself publish anything. SHA256SUMS covers all source files and generated metadata except itself; neither is a publisher signature or proof of legal origin. Git source checkouts do not need generated package files to run tests or the fictional demo.
 
-Two builds from the same commit have identical file bytes/manifests and fixed timestamps, with files 0644, nested directories 0755 and restricted root 0700. No archive reproducibility or hosted release is claimed. Keep test output/caches outside the sealed candidate and use Python `-B`; verify again after local checks. Original fixtures/captures remain fictional. [Validation](../VALIDATION.md) describes local and prepared CI checks, and [license scope](LICENSE-SCOPE.md) distinguishes project MIT from external dependencies.
+Two builds from the same commit have identical file bytes/manifests and fixed timestamps, with files 0644, nested directories 0755 and restricted root 0700. No archive reproducibility or hosted release is claimed. Keep test output/caches outside the sealed candidate and use Python `-B`; verify again after local checks. Original fixtures/captures remain fictional. [Validation](../VALIDATION.md) describes local and hosted CI checks, and [license scope](LICENSE-SCOPE.md) distinguishes project MIT from external dependencies.

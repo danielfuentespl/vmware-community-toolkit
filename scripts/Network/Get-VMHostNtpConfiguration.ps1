@@ -40,12 +40,12 @@ Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
         $seen = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
-        $hosts=@(Get-VMHost -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop)
+        $hosts=@(Get-VMHost -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop 3>$null)
         foreach ($vmHost in $hosts) {
             $id=ConvertTo-ToolkitText -Value $vmHost.Id
             Assert-ToolkitUniqueIdentity -Seen $seen -Id $id
             $hostName=ConvertTo-ToolkitText -Value $vmHost.Name
-            $ntp=@(Get-VMHostNtpServer -Server $Server -VMHost $vmHost -ErrorAction Stop -WarningAction Stop)
+            $ntp=@(Get-VMHostNtpServer -Server $Server -VMHost $vmHost -ErrorAction Stop -WarningAction Stop 3>$null)
             $servers=[System.Collections.Generic.List[string]]::new()
             $serverNames=[System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
             foreach ($entry in $ntp) {

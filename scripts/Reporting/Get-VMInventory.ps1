@@ -36,7 +36,7 @@ Import-Module (Join-Path $PSScriptRoot '../Private/Toolkit.Common.psm1') -Scope 
 Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
-        Get-VM -Server $Server -Name $Name -ErrorAction Stop | ForEach-Object {
+        Get-VM -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop 3>$null | ForEach-Object {
             if ([string]::IsNullOrWhiteSpace($_.Name) -or
                 $null -eq $_.NumCpu -or $_.NumCpu -isnot [ValueType] -or $_.NumCpu -is [bool] -or
                 -not [double]::IsFinite([double] $_.NumCpu) -or $_.NumCpu -lt 1 -or $_.NumCpu % 1 -ne 0 -or

@@ -32,7 +32,7 @@ function Initialize-ToolkitPowerCli {
         $command = Get-Command $required -Module VMware.VimAutomation.Core -ErrorAction Stop
         if ($command.CommandType -ne 'Cmdlet') { throw 'Expected a PowerCLI cmdlet.' }
     }
-    $configuration = @(Get-PowerCLIConfiguration -Scope Session -ErrorAction Stop)
+    $configuration = @(Get-PowerCLIConfiguration -Scope Session -ErrorAction Stop -WarningAction Stop 3>$null)
     if ($configuration.Count -ne 1 -or [string] $configuration[0].InvalidCertificateAction -ne 'Fail') {
         throw 'Explicit Session certificate policy Fail is required.'
     }

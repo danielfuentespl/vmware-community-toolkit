@@ -6,7 +6,7 @@ PowerShell utilities for vSphere inventory, ESXi configuration observations, sna
 
 Live readers require an **explicit authorized PowerCLI connection**. Offline comparison, VCF analyzers and HTML rendering require no VMware connection. Configuration observations are not security/compliance verdicts. Missing evidence stays Unknown; empty results do not prove complete visibility.
 
-**MIT — Copyright (c) 2026 Daniel Fuentes.** See [LICENSE](LICENSE) and [provenance](PROVENANCE.md). This is the local `v0.1.0-rc5` candidate; no public URL or release has been created. Keep the complete directory tree. [Installation and first use](docs/GETTING-STARTED.md) · [Compatibility](docs/COMPATIBILITY.md) · [Examples](examples/README.md).
+**MIT — Copyright (c) 2026 Daniel Fuentes.** See [LICENSE](LICENSE) and [provenance](PROVENANCE.md). The `v0.1.0-rc5` source is [public on GitHub](https://github.com/danielfuentespl/vmware-community-toolkit); no release or stable tag has been created. Keep the complete directory tree. [Installation and first use](docs/GETTING-STARTED.md) · [Compatibility](docs/COMPATIBILITY.md) · [Examples](examples/README.md).
 
 ## Start offline
 
@@ -146,7 +146,7 @@ Git source checkouts do not contain the generated distribution manifest. In an a
 
 **VCF analyzers are offline-only and have not been functionally validated against a real VCF deployment.** Mutable official API references do not establish VCF 9.x build compatibility. SourceVersion is descriptive; timestamp units, absent evidence and unsupported contracts are not guessed.
 
-The public candidate passes **251 Pester cases and ten Python tests**, plus configured PSScriptAnalyzer and redacted Gitleaks checks. [Validation methods and CI limits](VALIDATION.md) explain the scope. The GitHub workflow uses only mocks/fictional fixtures and installs pinned test modules in a disposable runner; it needs no VMware credentials. Its test commands were exercised locally; a hosted GitHub run has not occurred.
+The public candidate passes **256 Pester cases and 13 Python tests**, plus configured PSScriptAnalyzer and redacted Gitleaks checks. [Validation methods and CI limits](VALIDATION.md) explain the scope. The GitHub workflow uses only mocks/fictional fixtures and verifies SHA-256-locked PSGallery test modules before extraction/import in a disposable runner; it needs no VMware credentials. The [hosted offline workflow](https://github.com/danielfuentespl/vmware-community-toolkit/actions/workflows/validate.yml) has run successfully; this does not extend VMware functional coverage.
 
 With approved test dependencies already installed:
 

@@ -112,7 +112,7 @@ try {
 } finally {
     foreach ($opened in $connections) {
         try {
-            Disconnect-VIServer -Server $opened -Confirm:$false -ErrorAction Stop -WarningAction Stop -Verbose:$false -Debug:$false -InformationAction Ignore | Out-Null
+            Disconnect-VIServer -Server $opened -Confirm:$false -ErrorAction Stop -WarningAction Stop 3>$null -Verbose:$false -Debug:$false -InformationAction Ignore | Out-Null
             if ($evidence.Disconnect -ne 'Failed') { $evidence.Disconnect = 'Completed' }
         } catch {
             $evidence.FailureStage = 'Disconnect'

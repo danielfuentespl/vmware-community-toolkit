@@ -2,7 +2,7 @@
 
 This is a collection of scripts, not an installable PowerShell module. Keep the complete directory tree: runtime scripts depend on scripts/Private; offline demos depend on the bundled fictional tests/fixtures. Both READMEs, examples, tests, packaging tools and user documentation are included under MIT, Copyright (c) 2026 Daniel Fuentes. No runtime, PowerCLI module or development-tool binary is bundled.
 
-Use a supplied complete candidate directory or, once a source repository is separately made available, its complete checkout. No public download URL, installer or release is claimed here. A Git source checkout needs no distribution manifest; the verification command below applies only to a history-free package containing SHA256SUMS. All output paths should be outside the sealed candidate.
+Use a supplied complete candidate directory or a complete checkout of the public repository. The [public GitHub repository](https://github.com/danielfuentespl/vmware-community-toolkit) is available; no hosted release or installer is provided. A Git source checkout needs no distribution manifest; the verification command below applies only to a history-free package containing SHA256SUMS. All output paths should be outside the sealed candidate.
 
 ## 1. Verify a supplied distribution and start offline
 
@@ -134,4 +134,4 @@ Pester 6.2.0, PSScriptAnalyzer 1.25.0 and Gitleaks 8.30.1 are the executed test-
 gitleaks git . --log-opts=--all --redact=100 --no-banner
 ```
 
-A history-free package is sufficient to run the scripts and demo. With the approved development tools (including Git for the temporary packaging-test fixture), it also runs local tests; it cannot build a source-identified candidate without the source Git history. Public issue/PR templates are prepared locally only. MIT permits reuse of the original included materials with notice retention; security disclosure and any publication action remain separate responsibilities.
+A history-free package is sufficient to run the scripts and demo. With the approved development tools (including Git for the temporary packaging-test fixture), it also runs local tests; it cannot build a source-identified candidate without the source Git history. Public issue/PR templates are included in the GitHub repository. MIT permits reuse of the original included materials with notice retention; security disclosure and any publication action remain separate responsibilities.

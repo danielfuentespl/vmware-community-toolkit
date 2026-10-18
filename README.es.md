@@ -6,7 +6,7 @@ Utilidades PowerShell para inventariar vSphere, observar la configuración de ES
 
 Los lectores en vivo requieren una **conexión PowerCLI explícita y autorizada**. La comparación, los analizadores VCF y el generador HTML funcionan sin conexión VMware. Las observaciones de configuración no certifican seguridad ni cumplimiento. La falta de evidencia se mantiene como Unknown; un resultado vacío no acredita visibilidad completa.
 
-**MIT — Copyright (c) 2026 Daniel Fuentes.** Consulta [LICENSE](LICENSE) y la [procedencia](PROVENANCE.md). Este es el candidato local `v0.1.0-rc5`; no se ha creado una URL pública ni una release. Conserva toda la estructura de directorios. [Instalación y primer uso](docs/GETTING-STARTED.md) · [Compatibilidad](docs/COMPATIBILITY.md) · [Ejemplos](examples/README.md).
+**MIT — Copyright (c) 2026 Daniel Fuentes.** Consulta [LICENSE](LICENSE) y la [procedencia](PROVENANCE.md). El código `v0.1.0-rc5` está [publicado en GitHub](https://github.com/danielfuentespl/vmware-community-toolkit); no se ha creado ninguna release ni etiqueta estable. Conserva toda la estructura de directorios. [Instalación y primer uso](docs/GETTING-STARTED.md) · [Compatibilidad](docs/COMPATIBILITY.md) · [Ejemplos](examples/README.md).
 
 ## Empezar sin infraestructura
 
@@ -146,7 +146,7 @@ La [matriz por herramienta](docs/TOOL-VALIDATION-MATRIX.md) distingue análisis 
 
 **Los analizadores VCF son exclusivamente offline y no se han validado funcionalmente contra un despliegue VCF real.** Las referencias oficiales mutables no acreditan compatibilidad con builds VCF 9.x. SourceVersion es descriptivo; no se adivinan unidades de tiempo, datos ausentes ni contratos no soportados.
 
-El candidato público supera **251 casos Pester y diez pruebas Python**, además de PSScriptAnalyzer con las reglas del proyecto y Gitleaks con redacción. [Métodos de validación y límites de CI](VALIDATION.md). El workflow de GitHub solo usa mocks/fixtures ficticios e instala módulos de prueba con versiones fijadas en un runner desechable; no requiere credenciales VMware. Sus comandos de prueba se ejecutaron localmente; no se ha realizado una ejecución alojada en GitHub.
+El candidato público supera **256 casos Pester y 13 pruebas Python**, además de PSScriptAnalyzer con las reglas del proyecto y Gitleaks con redacción. [Métodos de validación y límites de CI](VALIDATION.md). El workflow de GitHub solo usa mocks/fixtures ficticios y verifica los paquetes de prueba de PSGallery mediante SHA-256 antes de extraerlos o importarlos en un runner desechable; no requiere credenciales VMware. El [workflow offline alojado](https://github.com/danielfuentespl/vmware-community-toolkit/actions/workflows/validate.yml) ya se ha ejecutado correctamente; esto no amplía la validación funcional VMware.
 
 Con las dependencias de prueba existentes y aprobadas:
 

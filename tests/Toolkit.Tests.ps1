@@ -53,6 +53,21 @@ Describe 'Read-only reports' {
         @(& "$report/Get-VMHostDnsReport.ps1" -Server $connection).Count | Should -Be 0
         Should -Invoke Get-VMHostNetwork -Times 0
     }
+    It 'Sanitizes provider warning from <Provider> in <File> without records' -ForEach @(
+        @{File='Get-VMInventory.ps1';Provider='Get-VM'},
+        @{File='Get-SnapshotReport.ps1';Provider='Get-VM'},
+        @{File='Get-SnapshotReport.ps1';Provider='Get-Snapshot'},
+        @{File='Get-VMHostDnsReport.ps1';Provider='Get-VMHost'},
+        @{File='Get-VMHostDnsReport.ps1';Provider='Get-VMHostNetwork'}
+    ) {
+        Mock $Provider { Write-Warning 'fixture-private-provider-warning' }
+        $captured=[Collections.Generic.List[object]]::new();$failure=$null
+        try { & "$report/$File" -Server $connection 3>&1 | ForEach-Object { $captured.Add($_) } } catch { $failure=$_ }
+        $failure | Should -Not -BeNullOrEmpty
+        $failure.FullyQualifiedErrorId | Should -Match 'Toolkit\..*Failed'
+        $failure.ToString() | Should -Not -Match 'fixture-private-provider-warning'
+        $captured.Count | Should -Be 0
+    }
     It 'Stops on VM query failure' {
         Mock Get-VM { throw 'Synthetic failure' }
         { & "$report/Get-VMInventory.ps1" -Server $connection } | Should -Throw '*inventory failed*'

@@ -40,7 +40,7 @@ Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
         $seen = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
-        $views = @(Get-View -Server $Server -ViewType HostSystem -Property Name,Summary.OverallStatus,Runtime.ConnectionState,Runtime.InMaintenanceMode -ErrorAction Stop -WarningAction Stop)
+        $views = @(Get-View -Server $Server -ViewType HostSystem -Property Name,Summary.OverallStatus,Runtime.ConnectionState,Runtime.InMaintenanceMode -ErrorAction Stop -WarningAction Stop 3>$null)
         foreach ($view in $views) {
             if ($view.MoRef.Type -ne 'HostSystem') { throw 'Unexpected managed object type.' }
             $id=ConvertTo-ToolkitText -Value $view.MoRef.Value

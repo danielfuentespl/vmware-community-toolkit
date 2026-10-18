@@ -60,16 +60,16 @@ try {
     $rows = @(
         if ($EndpointType -ne 'vCenter') { throw 'Direct ESXi certificate contract not verified.' }
         if ($Scope -eq 'VCenter' -and $PSBoundParameters.ContainsKey('Name')) { throw 'Name applies to VMHost scope only.' }
-        $targets=@(if ($Scope -eq 'VCenter') { $Server } else { Get-VMHost -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop })
+        $targets=@(if ($Scope -eq 'VCenter') { $Server } else { Get-VMHost -Server $Server -Name $Name -ErrorAction Stop -WarningAction Stop 3>$null })
         $seen = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
         foreach ($target in $targets) {
             $targetName=ConvertTo-ToolkitText -Value $target.Name
             if ($Scope -eq 'VMHost') { $targetId=ConvertTo-ToolkitText -Value $target.Id } else { $targetId='VCenter' }
             Assert-ToolkitUniqueIdentity -Seen $seen -Id $targetId
             $certificates=@(if ($Scope -eq 'VCenter') {
-                @(Get-VIMachineCertificate -Server $Server -VCenterOnly -ErrorAction Stop -WarningAction Stop)
+                @(Get-VIMachineCertificate -Server $Server -VCenterOnly -ErrorAction Stop -WarningAction Stop 3>$null)
             } else {
-                @(Get-VIMachineCertificate -Server $Server -VMHost $target -ErrorAction Stop -WarningAction Stop)
+                @(Get-VIMachineCertificate -Server $Server -VMHost $target -ErrorAction Stop -WarningAction Stop 3>$null)
             })
             if ($certificates.Count -ne 1) { throw 'Expected exactly one machine SSL certificate per target.' }
             $certificate=$certificates[0]

@@ -51,7 +51,7 @@ Import-Module (Join-Path $PSScriptRoot '../Private/Snapshot.Support.psm1') -Scop
 Assert-ToolkitConnection -Server $Server
 try {
     $rows = @(
-        $snapshots=@(& (Join-Path $PSScriptRoot 'Get-SnapshotReport.ps1') -Server $Server -Name $Name -IncludeIdentity -ErrorAction Stop -WarningAction Stop)
+        $snapshots=@(& (Join-Path $PSScriptRoot 'Get-SnapshotReport.ps1') -Server $Server -Name $Name -IncludeIdentity -ErrorAction Stop -WarningAction Stop 3>$null)
         ConvertTo-ToolkitOldSnapshot -Snapshot $snapshots -OlderThanDays $OlderThanDays -AsOf $AsOf -UnspecifiedTimeZone $UnspecifiedTimeZone
     )
 } catch {

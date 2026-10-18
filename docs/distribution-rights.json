@@ -2,7 +2,7 @@
   "candidate_version": "0.1.0-rc5",
   "binding": "Exact source commit in BUILD-METADATA.json; positive MIT scope equals distribution-files.json include",
   "public_distribution_authorized": true,
-  "agent_publication_authorized": false,
+  "agent_publication_authorized": true,
   "license_applied": true,
   "confirmed_rightsholder_authority_received": true,
   "copyright_notice": "Copyright (c) 2026 Daniel Fuentes",
@@ -130,7 +130,8 @@
     "tests/test_distribution.py",
     "tests/test_public_content.py",
     "tools/build_offline_candidate.py",
-    "tools/check_public_content.py"
+    "tools/check_public_content.py",
+    "tools/install_ci_dependencies.py"
   ],
   "pending_holder_authorization": [],
   "excluded_categories": [
@@ -143,6 +144,6 @@
   "notes": [
     "MIT does not license dependencies, vendor documentation or excluded material.",
     "AI assistance and Git metadata do not establish third-party ownership.",
-    "This is a local candidate; no remote or publication is authorized for the agent."
+    "The owner authorized publication of this independent repository; historical candidates and excluded material remain outside this scope."
   ]
 }
